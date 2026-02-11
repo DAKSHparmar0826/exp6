@@ -8,12 +8,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/DAKSHparmar0826/exp6.git'
-            }
-        }
-
         stage('Build Project') {
             steps {
                 bat 'mvn clean package'
@@ -29,7 +23,7 @@ pipeline {
                         url: 'http://localhost:8081'
                     )
                 ],
-                contextPath: 'demoapp',
+                contextPath: 'exp6',
                 war: '**/*.war'
             }
         }
